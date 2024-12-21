@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VaccinationActivity">
+
+    <EditText
+        android:id="@+id/edPinCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="Enter Pin code"
+        android:inputType="number"
+        android:layout_toStartOf="@+id/searchButton"/>
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:textAllCaps="false"
+        android:backgroundTint="#00ead3"
+        android:layout_alignParentEnd="true" />
+    <Button
+        android:id="@+id/vaccinationSlotBooting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchButton"
+        android:layout_margin="5dp"
+        android:onClick="slotBookingClicked"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:text="Book slot for vaccination"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:background="@drawable/bg_button"
+        android:textColor="@color/white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vaccinationRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/vaccinationSlotBooting"
+        android:layout_margin="5dp"
+        tools:listitem="@layout/vaccination_recylerview_item"/>
+
+
+
+
+</RelativeLayout>
